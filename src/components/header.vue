@@ -10,7 +10,8 @@
 				   <li><router-link to="/home">Home</router-link></li> |
 				   <li><router-link to="/works">Works</router-link></li> |
 				   <li><router-link to="/blog">Blog</router-link></li> |
-				   <li><router-link to="/about">About</router-link></li>
+				   <li><router-link to="/about">About</router-link></li> |
+				   <li><router-link to="/todolist">To Do</router-link></li>
 				</ul>
 			 </div>
 			 <div class="search_box">

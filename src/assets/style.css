@@ -25,7 +25,7 @@ img{max-width:100%;}
 /*end reset*/
 body{
 	font-family: 'Open Sans', sans-serif;
-	background:#fff;
+	background-color: gray;
 }
 .wrap{
 	width:80%;
@@ -36,11 +36,11 @@ body{
 	-ms-transition:all .2s linear;
 }
 .header{
-	background: #FFF;
+	
 	padding: 2% 0;
 }
 .single-header{
-	background: #FFF;
+	
 	padding:2% 0 1.6% 0;
 	border-bottom: 1px solid #EBEBEB;
 }
