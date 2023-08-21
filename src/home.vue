@@ -1,5 +1,4 @@
 <script>
-
   import banner from './components/banner.vue'
   import wrap from './components/wrap.vue'
   import content from './components/content.vue'

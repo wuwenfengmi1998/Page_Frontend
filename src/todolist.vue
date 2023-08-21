@@ -1,7 +1,7 @@
 <script>
 
 import todolist from './components/todolist/todo-list.vue'
-
+import todoinput from './components/todolist/todo-input.vue'
 export default{
     name:"todolistapp",
     data(){
@@ -15,7 +15,7 @@ export default{
         }
     },
     components:{
-        todolist,
+        todolist,todoinput,
     }
 }
 
@@ -23,7 +23,8 @@ export default{
 
 <template>
     <div>todo</div>
-    <todolist></todolist>
+    <todoinput></todoinput>
+    <todolist :list="thelist"></todolist>
     
 </template>
 
