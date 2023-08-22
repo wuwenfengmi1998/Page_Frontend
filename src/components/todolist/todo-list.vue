@@ -29,7 +29,7 @@ export default{
     <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" :id="item.id" v-model="item.done">
         <label class="form-check-label" :class="item.done ? 'delete' : ''" :for="item.id">
-           {{item.task}}
+          {{item.task}}
         </label>
     </div>
     <span class="badge bg-success rounded-pill" v-if="item.done">完成</span>

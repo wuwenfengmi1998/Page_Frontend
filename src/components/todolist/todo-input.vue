@@ -6,14 +6,19 @@ emits:['add'],
 data(){
     return{
         taskname:'',
-        
+        placeholder:'Task..',
     }
 },
 methods:{
     onforsubmit(){
-        if(!this.taskname){return alert('任务名不能空')}
-        this.$emit('add',this.taskname)
-        this.taskname=''
+        if(!this.taskname){
+          this.placeholder="输入不能为空"
+        }else{
+          this.$emit('add',this.taskname)
+          this.placeholder='Task..'
+          this.taskname=''
+        }
+        
     }
 }
 }
@@ -29,7 +34,7 @@ methods:{
     <div class="col-auto">
       <div class="input-group mb-2">     
         <div class="input-group-text">添加任务</div>    
-        <input type="text" class="form-control" placeholder="Task.." v-model.trim="taskname">
+        <input type="text" class="form-control" :placeholder="placeholder" v-model.trim="taskname">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
     </div>

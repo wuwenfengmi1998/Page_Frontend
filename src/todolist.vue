@@ -2,20 +2,52 @@
 
 import todolist from './components/todolist/todo-list.vue'
 import todoinput from './components/todolist/todo-input.vue'
+import todobutton from './components/todolist/todo-button.vue'
 export default{
     name:"todolistapp",
     data(){
         return{
             thelist:[
-                {id:1,task:"123",done:false},
-                {id:2,task:"456",done:false},
-                {id:3,task:"789",done:false},
-                {id:4,task:"121",done:false},
-            ]
+
+            ],
+            next_id:1,
+            activebtnindex:0,
+        }
+    },
+    methods:{
+        onaddnewtask(taskname){
+            console.log(taskname)
+            this.thelist.push({
+                id:this.next_id,
+                task:taskname,
+                done:false,
+            })
+            this.next_id+=1
+        },
+
+        changebtnindex(index)
+        {
+            this.activebtnindex=index
+        }
+    },
+    computed:{
+        tasklist(){
+            switch(this.activebtnindex)
+            {
+                case 0:
+                    return this.thelist
+                    break;
+                case 1:
+                    return this.thelist.filter(x=>x.done===true)
+                    break;
+                case 2:
+                    return this.thelist.filter(x=>x.done!==true)
+                    break;
+            }
         }
     },
     components:{
-        todolist,todoinput,
+        todolist,todoinput,todobutton,
     }
 }
 
@@ -23,8 +55,8 @@ export default{
 
 <template>
     <div>todo</div>
-    <todoinput></todoinput>
-    <todolist :list="thelist"></todolist>
-    
+    <todoinput @add="onaddnewtask"></todoinput>
+    <todolist :list="tasklist"></todolist>
+    <todobutton @btnindex="changebtnindex" :active="activebtnindex"></todobutton>
 </template>
 
